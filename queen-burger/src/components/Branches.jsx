@@ -4,7 +4,7 @@ const branches = [
   {
     name: 'Queen Burger Addis',
     badge: 'Main Branch',
-    image: '/asset/Int 2.jpg',
+    image: '/asset/Int-2.jpg',
     location: 'Beside Friendship Hotel, Addis Ababa',
     phone: '0955 909 094',
     phoneLink: 'tel:0955909094',
@@ -14,7 +14,7 @@ const branches = [
   {
     name: 'Queen Burger Mekanisa Abo',
     badge: 'Mekanisa Abo',
-    image: '/asset/Mekanisa branch.jpg',
+    image: '/asset/Mekanisa-branch.jpg',
     location: 'Sarbet, Abo Mazoria Round About',
     phone: '0955 297 777',
     phoneLink: 'tel:0955297777',

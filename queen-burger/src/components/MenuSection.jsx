@@ -61,7 +61,7 @@ const menuItems = [
     price: '840 ETB',
     isSpecialty: false,
     badge: '🥓 Bacon Choice',
-    image: '/asset/Take away.jpg',
+    image: '/asset/Take-away.jpg',
     description: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
     sides: 'Regular French Fries OR Waffle Fries'
   },
