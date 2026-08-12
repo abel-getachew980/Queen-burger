@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd queen-burger && npm run build",
+  "outputDirectory": "queen-burger/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
