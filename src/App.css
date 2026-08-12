@@ -15,7 +15,7 @@
 }
 
 .navbar.scrolled {
-  background: rgba(8, 1, 50, 0.94);
+  background: rgba(14, 0, 46, 0.94);
   backdrop-filter: blur(20px);
   padding: 14px 0;
   border-bottom: 1px solid rgba(212, 160, 23, 0.2);
@@ -260,7 +260,7 @@
 /* ===== ABOUT ===== */
 .about {
   padding: 48px 0 16px 0;
-  background: #080132;
+  background: #0E002E;
 }
 
 .about-grid {
@@ -345,7 +345,7 @@
 /* ===== MENU ===== */
 .menu-section {
   padding: 24px 0 48px 0;
-  background: #080132;
+  background: #0E002E;
 }
 
 .menu-label {
@@ -371,12 +371,12 @@
 /* Specialty Hero Card */
 .specialty-hero-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(13, 4, 66, 0.95), rgba(24, 7, 85, 0.95));
+  background: linear-gradient(135deg, rgba(20, 3, 59, 0.95), rgba(30, 5, 75, 0.95));
   border: 2px solid var(--gold);
   border-radius: var(--radius);
   overflow: hidden;
   margin-bottom: 32px;
-  box-shadow: 0 16px 48px rgba(8, 1, 50, 0.6);
+  box-shadow: 0 16px 48px rgba(14, 0, 46, 0.6);
 }
 
 .specialty-badge-ribbon {
@@ -694,7 +694,7 @@
 /* ===== BRANCHES ===== */
 .branches {
   padding: 50px 0;
-  background: #080132;
+  background: #0E002E;
 }
 
 .branches-label {
@@ -827,7 +827,7 @@
 /* ===== REVIEWS ===== */
 .reviews {
   padding: 50px 0;
-  background: #080132;
+  background: #0E002E;
 }
 
 .reviews-label {
@@ -979,7 +979,7 @@
 /* ===== FOLLOW US / SOCIAL ===== */
 .social-section {
   padding: 50px 0;
-  background: #080132;
+  background: #0E002E;
 }
 
 .social-label {
@@ -1124,7 +1124,7 @@
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #04001d;
+  background: #08001d;
   border-top: 1px solid rgba(255,255,255,0.08);
   padding: 40px 0 0;
 }

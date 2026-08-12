@@ -9,11 +9,11 @@
   --gold: #D4A017;
   --gold-light: #F0C040;
   --gold-dark: #A67C00;
-  --black: #080132;
-  --dark: #080132;
-  --dark-2: #0d0442;
-  --dark-3: #130752;
-  --royal-blue: #080132;
+  --black: #0E002E;
+  --dark: #0E002E;
+  --dark-2: #14033b;
+  --dark-3: #1a054a;
+  --royal-blue: #0E002E;
   --white: #FFFFFF;
   --gray: #9ba3b8;
   --gray-light: #d2d9e8;
@@ -27,7 +27,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #080132;
+  background: #0E002E;
   color: var(--white);
   font-family: var(--font-body);
   line-height: 1.6;
