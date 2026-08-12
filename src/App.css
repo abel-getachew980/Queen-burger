@@ -44,6 +44,43 @@
   list-style: none;
 }
 
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  padding: 6px 14px;
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-toggle-btn:hover {
+  background: rgba(212, 160, 23, 0.18);
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.2);
+}
+
+.lang-toggle-btn .active-lang {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.lang-divider {
+  opacity: 0.35;
+}
+
 .nav-links a {
   font-size: 0.9rem;
   font-weight: 500;

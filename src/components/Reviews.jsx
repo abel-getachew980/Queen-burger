@@ -1,4 +1,5 @@
 import useInView from '../hooks/useInView'
+import { useLanguage } from '../context/LanguageContext'
 
 const reviews = [
   {
@@ -33,12 +34,13 @@ const reviews = [
 
 export default function Reviews() {
   const [ref, inView] = useInView()
+  const { t } = useLanguage()
 
   return (
     <section className="reviews" id="reviews">
       <div className="container">
-        <span className="reviews-label">Real Customer Feedback</span>
-        <h2 className="reviews-title">Reviews from Google Maps</h2>
+        <span className="reviews-label">{t('reviews.label')}</span>
+        <h2 className="reviews-title">{t('reviews.title')}</h2>
 
         <div className={`reviews-grid ${inView ? 'visible' : ''}`} ref={ref}>
           {reviews.map((review, i) => (
@@ -84,7 +86,7 @@ export default function Reviews() {
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            📍 Read More Reviews on Google Maps
+            {t('reviews.cta')}
           </a>
         </div>
       </div>

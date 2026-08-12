@@ -1,0 +1,218 @@
+export const translations = {
+  en: {
+    nav: {
+      about: 'About',
+      menu: 'Menu',
+      branches: 'Branches',
+      reviews: 'Reviews',
+      contact: 'Contact',
+    },
+    hero: {
+      tagline: "Addis Ababa's Finest",
+      title: "The Royal Taste 👑",
+      sub: "Handcrafted burgers made with premium ingredients, served with royal hospitality.",
+      btnMenu: "View Menu",
+      btnBranches: "Find Us",
+      badgeFriendship: "📍 Friendship Hotel",
+      badgeMekanisa: "📍 Mekanisa Abo",
+      phone: "📞 0955 909 094",
+    },
+    about: {
+      label: "Our Story",
+      title: "Born to Reign the Burger Scene",
+      p1: "Queen Burger was built on one simple belief — that a great burger deserves the best ingredients, the perfect cook, and a space where you feel like royalty.",
+      p2: "From our signature smash patties to our house-made sauces, every detail on your plate is crafted with passion. Come hungry. Leave crowned.",
+    },
+    menu: {
+      label: "Crafted for Royalty",
+      title: "The Royal Menu",
+      specialtyRibbon: "👑 SPECIALTY OF THE HOUSE",
+      signatureCreation: "🔥 Signature Creation",
+      sidesPill: "🍟 Includes Regular French Fries OR Waffle Fries",
+      sidesTag: "🍟 Served with Regular or Waffle Fries",
+      tabAll: "All Items",
+      tabSpecialty: "⭐ House Specialty",
+      tabBurgers: "🍔 Burgers",
+      tabSandwiches: "🥪 Sandwiches",
+      searchPlaceholder: "Search burgers, ingredients...",
+      noResults: 'No burgers match "{query}". Try searching for another keyword!',
+      resetFilters: "Reset Filters",
+      items: {
+        'queen-lava': {
+          name: 'The Queen Lava Burger',
+          desc: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
+        },
+        'royal-cheese': {
+          name: 'The Royal Cheese Burger',
+          desc: 'Well seasoned ground beef patty, butter toasted bun, house sauce, ketchup, provolone cheese, pickle served with Regular French Fries OR Waffle Fries',
+        },
+        'majestic-cheese': {
+          name: 'Majestic Cheese Burger',
+          desc: 'Well seasoned ground beef patty, butter toasted bun, special house sauce, pickle, ketchup, provolone cheese served with Regular French Fries OR Waffle Fries',
+        },
+        'queens-spicy': {
+          name: "Queen's Spicy Cheese Burger",
+          desc: 'Well seasoned ground beef patty, butter toasted bun, spicy sauce, pickle, provolone cheese served with Regular French Fries OR Waffle Fries',
+        },
+        'fried-onion': {
+          name: 'The Fried Onion Delight',
+          desc: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
+        },
+        'crowned-bacon': {
+          name: 'Crowned Beef Bacon Cheese Burger',
+          desc: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
+        },
+        'smashed-patty': {
+          name: 'The Queen Smashed Patty Burger',
+          desc: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
+        },
+        'her-majesty': {
+          name: 'Her Majesty',
+          desc: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
+        },
+        'double-queen': {
+          name: 'The Double Queen',
+          desc: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
+        },
+        'philly-cheese': {
+          name: 'Philly Cheese Steak Sandwich',
+          desc: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
+        },
+      }
+    },
+    branches: {
+      label: "Find Us",
+      title: "Our Branches",
+      mainBranch: "Main Branch",
+      mekanisaBranch: "Mekanisa Abo",
+      getDirections: "Get Directions",
+      addisLocation: "Beside Friendship Hotel, Addis Ababa",
+      mekanisaLocation: "Sarbet, Abo Mazoria Round About",
+    },
+    reviews: {
+      label: "Real Customer Feedback",
+      title: "Reviews from Google Maps",
+      cta: "📍 Read More Reviews on Google Maps",
+    },
+    social: {
+      label: "Stay Connected",
+      title: "Follow Queen Burger",
+      sub: "Join our royal community on Instagram & TikTok for mouthwatering updates!",
+      follow: "Follow Us",
+    },
+    footer: {
+      sub: "The Royal Taste of Addis Ababa. Crafted with passion, served with pride.",
+      quickLinks: "Quick Links",
+      contact: "Contact",
+      rights: "© 2026 Queen Burger Addis. All rights reserved.",
+    }
+  },
+  am: {
+    nav: {
+      about: 'ስለ እኛ',
+      menu: 'ሜኑ',
+      branches: 'ቅርንጫፎች',
+      reviews: 'አስተያየቶች',
+      contact: 'አድራሻ',
+    },
+    hero: {
+      tagline: "የአዲስ አበባ ምርጥ",
+      title: "የንግሥት ጣዕም 👑",
+      sub: "በከፍተኛ ጥራት በታሸጉ ንጥረ ነገሮች የተዘጋጁ በርገሮች በንግሥታዊ እንክብካቤ የቀረቡ።",
+      btnMenu: "ሜኑ ይመልከቱ",
+      btnBranches: "አድራሻችንን ያግኙ",
+      badgeFriendship: "📍 ፍሬንድሺፕ ሆቴል ጎን",
+      badgeMekanisa: "📍 መካኒሳ አቦ",
+      phone: "📞 0955 909 094",
+    },
+    about: {
+      label: "ታሪካችን",
+      title: "የበርገር ዓለምን በንግሥትነት ለመምራት የተፈጠረ",
+      p1: "ንግሥት በርገር (Queen Burger) የተመሠረተው በአንድ ቀላል እምነት ነው — ምርጥ በርገር ምርጥ ንጥረ ነገሮችን፣ ፍጹም አበሳሰልንና ንግሥታዊ ስሜት የሚሰጥ ቦታ ይገባዋል።",
+      p2: "ከስማሽ ፓቲዎቻችን እስከ ልዩ ሶሶቻችን፣ በሳህኖ ላይ ያለው እያንዳንዱ ነገር በፍቅር የተዘጋጀ ነው። ተርበው ይምጡ፣ በንግሥትነት ዘውድ ደፍተው ይመለሱ።",
+    },
+    menu: {
+      label: "ለንግሥትነት የተዘጋጀ",
+      title: "የንግሥታዊ ሜኑ",
+      specialtyRibbon: "👑 የቤቱ ልዩ ምግብ",
+      signatureCreation: "🔥 ልዩ ፈጠራ",
+      sidesPill: "🍟 ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የሚቀርብ",
+      sidesTag: "🍟 ከመደበኛ ወይም ዋፍል ፍራይስ ጋር የሚቀርብ",
+      tabAll: "ሁሉም",
+      tabSpecialty: "⭐ የቤቱ ልዩ",
+      tabBurgers: "🍔 በርገሮች",
+      tabSandwiches: "🥪 ሳንድዊቾች",
+      searchPlaceholder: "በርገር ወይም ግብዓት ይፈልጉ...",
+      noResults: 'ከ"{query}" ጋር የሚመሳሰል በርገር አልተገኘም። እባክዎ ሌላ ቃል ይፈልጉ!',
+      resetFilters: "ማጣሪያዎችን ይመልሱ",
+      items: {
+        'queen-lava': {
+          name: 'ዘ ኪን ላቫ በርገር (The Queen Lava)',
+          desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የቤቱ ልዩ ሶስ፣ ፕሮቮሎን ቺዝ፣ የተጠበሰ የሽንኩርት ቀለበት ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+        'royal-cheese': {
+          name: 'ዘ ሮያል ቺዝ በርገር (The Royal Cheese)',
+          desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የቤቱ ሶስ፣ ኬችአፕ፣ ፕሮቮሎን ቺዝ፣ ፒክል ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+        'majestic-cheese': {
+          name: 'ማጀስቲክ ቺዝ በርገር (Majestic Cheese)',
+          desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ ልዩ የቤቱ ሶስ፣ ፒክል፣ ኬችአፕ፣ ፕሮቮሎን ቺዝ ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+        'queens-spicy': {
+          name: 'ኪንስ ስፓይሲ ቺዝ በርገር (Queen\'s Spicy)',
+          desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የሚያቃጥል ሶስ፣ ፒክል፣ ፕሮቮሎን ቺዝ ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+        'fried-onion': {
+          name: 'ዘ ፍራይድ ኦኒየን ዲላይት (The Fried Onion)',
+          desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የቤቱ ሶስ፣ ፕሮቮሎን ቺዝ፣ የተጠበሰ የሽንኩርት ቀለበት ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+        'crowned-bacon': {
+          name: 'ክራውንድ ቢፍ ቤከን ቺዝ በርገር',
+          desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የቤቱ ሶስ፣ ፕሮቮሎን ቺዝ፣ የተጠበሰ የሽንኩርት ቀለበት ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+        'smashed-patty': {
+          name: 'ዘ ኪን ስማሽድ ፓቲ በርገር',
+          desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የቤቱ ሶስ፣ ፕሮቮሎን ቺዝ፣ የተጠበሰ የሽንኩርት ቀለበት ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+        'her-majesty': {
+          name: 'ኸር ማጀስቲ (Her Majesty)',
+          desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የቤቱ ሶስ፣ ፕሮቮሎን ቺዝ፣ የተጠበሰ የሽንኩርት ቀለበት ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+        'double-queen': {
+          name: 'ዘ ደብል ኪን (The Double Queen)',
+          desc: 'በጥራት የተቀመመ ደብል የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የቤቱ ሶስ፣ ፕሮቮሎን ቺዝ፣ የተጠበሰ የሽንኩርት ቀለበት ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+        'philly-cheese': {
+          name: 'ፊሊ ቺዝ ስቴክ ሳንድዊች',
+          desc: 'በጥራት የተቀመመ የበሬ ሥጋ፣ በቅቤ የተጠበሰ ቡን፣ የቤቱ ሶስ፣ ፕሮቮሎን ቺዝ፣ የተጠበሰ የሽንኩርት ቀለበት ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
+        },
+      }
+    },
+    branches: {
+      label: "ቅርንጫፎቻችን",
+      title: "የቅርንጫፎቻችን አድራሻ",
+      mainBranch: "ዋና ቅርንጫፍ",
+      mekanisaBranch: "መካኒሳ አቦ",
+      getDirections: "አቅጣጫ ያግኙ",
+      addisLocation: "ፍሬንድሺፕ ሆቴል ጎን፣ አዲስ አበባ",
+      mekanisaLocation: "ሳርቤት፣ አቦ ማዞሪያ",
+    },
+    reviews: {
+      label: "የደንበኞች አስተያየት",
+      title: "ከጉግል ካርታ የተወሰዱ አስተያየቶች",
+      cta: "📍 ተጨማሪ አስተያየቶችን በጉግል ካርታ ላይ ይመልከቱ",
+    },
+    social: {
+      label: "ይከተሉን",
+      title: "በማህበራዊ ሚዲያ ይከተሉን",
+      sub: "ለአዳዲስ ቅናሾችና ምግብ ምስሎች በኢንስታግራም እና ቲቲክቶክ ይከተሉን!",
+      follow: "ይከተሉን",
+    },
+    footer: {
+      sub: "የአዲስ አበባ የንግሥት ጣዕም በኩራት የተዘጋጀ።",
+      quickLinks: "ፈጣን ሊንኮች",
+      contact: "አድራሻ",
+      rights: "© 2026 ኪን በርገር አዲስ። መብቱ በህግ የተጠበቀ ነው።",
+    }
+  }
+}

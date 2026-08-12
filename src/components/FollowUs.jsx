@@ -1,4 +1,5 @@
 import useInView from '../hooks/useInView'
+import { useLanguage } from '../context/LanguageContext'
 
 const socials = [
   {
@@ -27,14 +28,15 @@ const socials = [
 
 export default function FollowUs() {
   const [ref, inView] = useInView()
+  const { t } = useLanguage()
 
   return (
     <section className="social-section" id="contact">
       <div className="container">
-        <span className="social-label">Stay Connected</span>
-        <h2 className="social-title">Follow the Kingdom</h2>
+        <span className="social-label">{t('social.label')}</span>
+        <h2 className="social-title">{t('social.title')}</h2>
         <p className="social-sub">
-          Stay up to date with our latest deals, new menu items, and behind-the-scenes content.
+          {t('social.sub')}
         </p>
 
         <div className={`social-cards ${inView ? 'visible' : ''}`} ref={ref}>
@@ -51,7 +53,7 @@ export default function FollowUs() {
                 <strong>{social.name}</strong>
                 <span>{social.handle}</span>
               </div>
-              <span className="social-follow-btn">Follow</span>
+              <span className="social-follow-btn">{t('social.follow')}</span>
             </a>
           ))}
         </div>

@@ -1,4 +1,8 @@
+import { useLanguage } from '../context/LanguageContext'
+
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="hero" id="hero">
       <img
@@ -10,25 +14,23 @@ export default function Hero() {
       <div className="hero-overlay" />
 
       <div className="hero-content">
-        <p className="hero-tagline">Addis Ababa's Finest</p>
+        <p className="hero-tagline">{t('hero.tagline')}</p>
         <h1>
-          The Royal Taste <span className="hero-crown">👑</span>
+          {t('hero.title')}
         </h1>
         <p className="hero-sub">
-          Handcrafted burgers made with premium ingredients,<br />
-          served with royal hospitality.
+          {t('hero.sub')}
         </p>
         <div className="hero-cta">
-          <a href="#menu" className="btn-primary">View Menu</a>
-          <a href="#branches" className="btn-outline">Find Us</a>
+          <a href="#menu" className="btn-primary">{t('hero.btnMenu')}</a>
+          <a href="#branches" className="btn-outline">{t('hero.btnBranches')}</a>
         </div>
         <div className="hero-badges">
-          <span>📍 Friendship Hotel</span>
-          <span>📍 Mekanisa Abo</span>
-          <span>📞 0955 909 094</span>
+          <span>{t('hero.badgeFriendship')}</span>
+          <span>{t('hero.badgeMekanisa')}</span>
+          <span>{t('hero.phone')}</span>
         </div>
       </div>
-
     </section>
   )
 }

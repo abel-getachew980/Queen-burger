@@ -1,112 +1,83 @@
 import { useState } from 'react'
 import useInView from '../hooks/useInView'
+import { useLanguage } from '../context/LanguageContext'
 
-const menuItems = [
+const rawMenuItems = [
   {
     id: 'queen-lava',
-    name: 'The Queen Lava Burger',
     category: 'specialty',
     price: '2,000 ETB',
     isSpecialty: true,
-    badge: '🔥 Specialty of the House',
+    badge: '🔥 Specialty',
     image: '/asset/burger.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   },
   {
     id: 'royal-cheese',
-    name: 'The Royal Cheese Burger',
     category: 'burgers',
     price: '770 ETB',
     isSpecialty: false,
     image: '/asset/Food.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, house sauce, ketchup, provolone cheese, pickle served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   },
   {
     id: 'majestic-cheese',
-    name: 'Majestic Cheese Burger',
     category: 'burgers',
     price: '820 ETB',
     isSpecialty: false,
     image: '/asset/Food2.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, special house sauce, pickle, ketchup, provolone cheese served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   },
   {
     id: 'queens-spicy',
-    name: "Queen's Spicy Cheese Burger",
     category: 'burgers',
     price: '790 ETB',
     isSpecialty: false,
-    badge: '🌶️ Spicy Favorite',
+    badge: '🌶️ Spicy',
     image: '/asset/food3.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, spicy sauce, pickle, provolone cheese served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   },
   {
     id: 'fried-onion',
-    name: 'The Fried Onion Delight',
     category: 'burgers',
     price: '790 ETB',
     isSpecialty: false,
     image: '/asset/food4.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   },
   {
     id: 'crowned-bacon',
-    name: 'Crowned Beef Bacon Cheese Burger',
     category: 'burgers',
     price: '840 ETB',
     isSpecialty: false,
     badge: '🥓 Bacon Choice',
     image: '/asset/Take-away.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   },
   {
     id: 'smashed-patty',
-    name: 'The Queen Smashed Patty Burger',
     category: 'burgers',
     price: '770 ETB',
     isSpecialty: false,
     image: '/asset/food4.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   },
   {
     id: 'her-majesty',
-    name: 'Her Majesty',
     category: 'burgers',
     price: '880 ETB',
     isSpecialty: false,
     badge: '👑 Royal Pick',
     image: '/asset/Food2.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   },
   {
     id: 'double-queen',
-    name: 'The Double Queen',
     category: 'burgers',
     price: '1,350 ETB',
     isSpecialty: false,
     badge: '🍔 Double Patty',
     image: '/asset/food3.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   },
   {
     id: 'philly-cheese',
-    name: 'Philly Cheese Steak Sandwich',
     category: 'sandwiches',
     price: '900 ETB',
     isSpecialty: false,
     badge: '🥪 Specialty Sandwich',
     image: '/asset/Food.jpg',
-    description: 'Well seasoned ground beef patty, butter toasted bun, house sauce, provolone cheese, fried onion ring served with Regular French Fries OR Waffle Fries',
-    sides: 'Regular French Fries OR Waffle Fries'
   }
 ]
 
@@ -114,6 +85,13 @@ export default function MenuSection() {
   const [ref, inView] = useInView()
   const [activeTab, setActiveTab] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
+  const { t } = useLanguage()
+
+  const menuItems = rawMenuItems.map(item => ({
+    ...item,
+    name: t(`menu.items.${item.id}.name`),
+    description: t(`menu.items.${item.id}.desc`),
+  }))
 
   const filteredItems = menuItems.filter(item => {
     const matchesTab =
@@ -134,23 +112,23 @@ export default function MenuSection() {
   return (
     <section className="menu-section" id="menu">
       <div className="container">
-        <span className="menu-label">Crafted for Royalty</span>
-        <h2 className="menu-title">The Royal Menu</h2>
+        <span className="menu-label">{t('menu.label')}</span>
+        <h2 className="menu-title">{t('menu.title')}</h2>
 
         {/* Specialty Feature Banner */}
         {specialtyItem && (
           <div className="specialty-hero-card">
             <div className="specialty-badge-ribbon">
-              <span>👑 SPECIALTY OF THE HOUSE</span>
+              <span>{t('menu.specialtyRibbon')}</span>
             </div>
             <div className="specialty-hero-content">
               <div className="specialty-info">
-                <span className="specialty-fire">🔥 Signature Creation</span>
+                <span className="specialty-fire">{t('menu.signatureCreation')}</span>
                 <h3>{specialtyItem.name}</h3>
                 <p className="specialty-desc">{specialtyItem.description}</p>
                 <div className="specialty-meta">
                   <span className="specialty-price">{specialtyItem.price}</span>
-                  <span className="specialty-sides-pill">🍟 Includes Regular French Fries OR Waffle Fries</span>
+                  <span className="specialty-sides-pill">{t('menu.sidesPill')}</span>
                 </div>
               </div>
               <div className="specialty-image-wrapper">
@@ -168,25 +146,25 @@ export default function MenuSection() {
               className={`menu-tab ${activeTab === 'all' ? 'active' : ''}`}
               onClick={() => setActiveTab('all')}
             >
-              All Items ({menuItems.length})
+              {t('menu.tabAll')} ({menuItems.length})
             </button>
             <button
               className={`menu-tab ${activeTab === 'specialty' ? 'active' : ''}`}
               onClick={() => setActiveTab('specialty')}
             >
-              ⭐ House Specialty
+              {t('menu.tabSpecialty')}
             </button>
             <button
               className={`menu-tab ${activeTab === 'burgers' ? 'active' : ''}`}
               onClick={() => setActiveTab('burgers')}
             >
-              🍔 Burgers
+              {t('menu.tabBurgers')}
             </button>
             <button
               className={`menu-tab ${activeTab === 'sandwiches' ? 'active' : ''}`}
               onClick={() => setActiveTab('sandwiches')}
             >
-              🥪 Sandwiches
+              {t('menu.tabSandwiches')}
             </button>
           </div>
 
@@ -197,7 +175,7 @@ export default function MenuSection() {
             </svg>
             <input
               type="text"
-              placeholder="Search burgers, ingredients..."
+              placeholder={t('menu.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -223,7 +201,7 @@ export default function MenuSection() {
                 <p className="menu-item-desc">{item.description}</p>
                 <div className="menu-card-footer">
                   <span className="sides-tag">
-                    🍟 Served with <strong>Regular</strong> or <strong>Waffle Fries</strong>
+                    {t('menu.sidesTag')}
                   </span>
                 </div>
               </div>
@@ -233,8 +211,8 @@ export default function MenuSection() {
 
         {filteredItems.length === 0 && (
           <div className="no-menu-results">
-            <p>No burgers match "{searchQuery}". Try searching for another keyword!</p>
-            <button onClick={() => { setSearchQuery(''); setActiveTab('all') }}>Reset Filters</button>
+            <p>{t('menu.noResults').replace('{query}', searchQuery)}</p>
+            <button onClick={() => { setSearchQuery(''); setActiveTab('all') }}>{t('menu.resetFilters')}</button>
           </div>
         )}
       </div>

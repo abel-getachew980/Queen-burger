@@ -1,7 +1,9 @@
 import useInView from '../hooks/useInView'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function About() {
   const [ref, inView] = useInView()
+  const { t } = useLanguage()
 
   return (
     <section className="about" id="about">
@@ -13,16 +15,10 @@ export default function About() {
         </div>
 
         <div className="about-text">
-          <span className="section-label">Our Story</span>
-          <h2>Born to Reign<br />the Burger Scene</h2>
-          <p>
-            Queen Burger was built on one simple belief — that a great burger deserves
-            the best ingredients, the perfect cook, and a space where you feel like royalty.
-          </p>
-          <p>
-            From our signature smash patties to our house-made sauces, every detail
-            on your plate is crafted with passion. Come hungry. Leave crowned.
-          </p>
+          <span className="section-label">{t('about.label')}</span>
+          <h2>{t('about.title')}</h2>
+          <p>{t('about.p1')}</p>
+          <p>{t('about.p2')}</p>
         </div>
       </div>
     </section>

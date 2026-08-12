@@ -1,22 +1,26 @@
-const links = [
-  { href: '#about', label: 'About Us' },
-  { href: '#menu', label: 'Menu' },
-  { href: '#branches', label: 'Branches' },
-  { href: '#reviews', label: 'Reviews' },
-]
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
+  const links = [
+    { href: '#about', label: t('nav.about') },
+    { href: '#menu', label: t('nav.menu') },
+    { href: '#branches', label: t('nav.branches') },
+    { href: '#reviews', label: t('nav.reviews') },
+  ]
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
             <p className="footer-logo">👑 Queen Burger</p>
-            <p>The Royal Taste of Addis Ababa. Crafted with passion, served with pride.</p>
+            <p>{t('footer.sub')}</p>
           </div>
 
           <div className="footer-links">
-            <h4>Quick Links</h4>
+            <h4>{t('footer.quickLinks')}</h4>
             <ul>
               {links.map(({ href, label }) => (
                 <li key={href}><a href={href}>{label}</a></li>
@@ -25,15 +29,15 @@ export default function Footer() {
           </div>
 
           <div className="footer-contact">
-            <h4>Contact</h4>
-            <p>📍 Beside Friendship Hotel</p>
+            <h4>{t('footer.contact')}</h4>
+            <p>📍 {t('branches.addisLocation')}</p>
             <p>📞 <a href="tel:0955909094">0955 909 094</a></p>
-            <p>📍 Sarbet, Abo Mazoria</p>
+            <p>📍 {t('branches.mekanisaLocation')}</p>
             <p>📞 <a href="tel:0955297777">0955 297 777</a></p>
           </div>
 
           <div className="footer-social">
-            <h4>Follow Us</h4>
+            <h4>{t('social.follow')}</h4>
             <div className="footer-social-links">
               <a
                 href="https://www.instagram.com/queen_burger_251?igsh=Mnh0aGVrZ3c1aGN1"
@@ -60,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2026 Queen Burger Addis. All rights reserved.</p>
+          <p>{t('footer.rights')}</p>
         </div>
       </div>
     </footer>
