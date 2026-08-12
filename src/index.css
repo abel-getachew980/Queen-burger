@@ -9,13 +9,14 @@
   --gold: #D4A017;
   --gold-light: #F0C040;
   --gold-dark: #A67C00;
-  --black: #0A0A0A;
-  --dark: #111111;
-  --dark-2: #1A1A1A;
-  --dark-3: #242424;
+  --black: #080132;
+  --dark: #080132;
+  --dark-2: #0d0442;
+  --dark-3: #130752;
+  --royal-blue: #080132;
   --white: #FFFFFF;
-  --gray: #888888;
-  --gray-light: #CCCCCC;
+  --gray: #9ba3b8;
+  --gray-light: #d2d9e8;
   --radius: 16px;
   --radius-sm: 8px;
   --transition: 0.3s ease;
@@ -26,7 +27,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--black);
+  background: #080132;
   color: var(--white);
   font-family: var(--font-body);
   line-height: 1.6;
