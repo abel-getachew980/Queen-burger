@@ -2,7 +2,6 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
-import Gallery from './components/Gallery'
 import MenuSection from './components/MenuSection'
 import Branches from './components/Branches'
 import Reviews from './components/Reviews'
@@ -16,7 +15,6 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Gallery />
         <MenuSection />
         <Branches />
         <Reviews />

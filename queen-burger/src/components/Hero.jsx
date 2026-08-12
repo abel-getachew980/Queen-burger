@@ -1,13 +1,11 @@
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      <video
-        className="hero-video"
-        autoPlay muted loop playsInline
-        aria-hidden="true"
-      >
-        <source src="/asset/60cbe27d5908ec8c9783ec1474f54037.mp4" type="video/mp4" />
-      </video>
+      <img
+        src="/asset/aadb7ff94d3e3b00cf6292359f395181.webp"
+        alt="Queen Burger"
+        className="hero-bg"
+      />
 
       <div className="hero-overlay" />
 
@@ -31,10 +29,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero-scroll" aria-hidden="true">
-        <span>Scroll</span>
-        <div className="hero-scroll-line" />
-      </div>
     </section>
   )
 }

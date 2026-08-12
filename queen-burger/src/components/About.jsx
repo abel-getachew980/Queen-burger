@@ -1,11 +1,5 @@
 import useInView from '../hooks/useInView'
 
-const stats = [
-  { value: '2+', label: 'Branches' },
-  { value: '50+', label: 'Menu Items' },
-  { value: '1000+', label: 'Happy Guests/Day' },
-]
-
 export default function About() {
   const [ref, inView] = useInView()
 
@@ -29,15 +23,6 @@ export default function About() {
             From our signature smash patties to our house-made sauces, every detail
             on your plate is crafted with passion. Come hungry. Leave crowned.
           </p>
-
-          <div className="about-stats">
-            {stats.map(({ value, label }) => (
-              <div className="about-stat" key={label}>
-                <strong>{value}</strong>
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
