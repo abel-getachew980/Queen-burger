@@ -140,7 +140,7 @@ export const translations = {
     },
     hero: {
       tagline: "የአዲስ አበባ ምርጥ",
-      title: "የንግሥት ጣዕም 👑",
+      title: "የነገሥታት ጣዕም 👑",
       sub: "በከፍተኛ ጥራት በታሸጉ ንጥረ ነገሮች የተዘጋጁ በርገሮች በንግሥታዊ እንክብካቤ የቀረቡ።",
       btnMenu: "ሜኑ ይመልከቱ",
       btnBranches: "አድራሻችንን ያግኙ",
@@ -156,7 +156,7 @@ export const translations = {
     },
     menu: {
       label: "ለንግሥትነት የተዘጋጀ",
-      title: "ንግሥታዊ ሜኑ",
+      title: "ሜኑ",
       specialtyRibbon: "👑 የቤቱ ልዩ ምግብ",
       signatureCreation: "🔥 ልዩ ፈጠራ",
       sidesPill: "🍟 ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የሚቀርብ",
@@ -255,7 +255,7 @@ export const translations = {
       follow: "ይከተሉን",
     },
     footer: {
-      sub: "የአዲስ አበባ የንግሥት ጣዕም በኩራት የተዘጋጀ።",
+      sub: "የአዲስ አበባ የነገሥታት ጣዕም በኩራት የተዘጋጀ።",
       quickLinks: "ፈጣን ሊንኮች",
       contact: "ያግኙን",
       rights: "© 2026 ኪን በርገር አዲስ። መብቱ በህግ የተጠበቀ ነው።",
