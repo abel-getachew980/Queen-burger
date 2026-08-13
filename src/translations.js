@@ -93,6 +93,29 @@ export const translations = {
       label: "Real Customer Feedback",
       title: "Reviews from Google Maps",
       cta: "📍 Read More Reviews on Google Maps",
+      list: [
+        {
+          name: 'Amanuel Gezahegn',
+          badge: 'Local Guide · 36 reviews · 86 photos',
+          date: '2 months ago',
+          source: 'Google Maps Review',
+          text: "We tried; Majestic Cheese Burger and Her Majesty (left to right). The Majestic Cheese Burger is very juicy and more delicious than Her Majesty. If you're up to juicy one go for the first one but if you like well maintained one go for the second one. They both teast wonderful but the french fries is a joke, very thin. Price is the same as the menu posted here. Quantity wise little bit small but not that much small though.",
+        },
+        {
+          name: 'Nuhamin Abera',
+          badge: 'Local Guide · 20 reviews · 252 photos',
+          date: '5 months ago',
+          source: 'Google Maps Review',
+          text: "I visited with my siblings and had such an amazing experience! The food was full of flavor, perfectly seasoned, with a soft bun, crispy chips, and delicious sauces. The space is a bit small, but the waiters are attentive and the food doesn’t take long to arrive. I might even crown this as one of my favorite burger spots to cool down a craving👸",
+        },
+        {
+          name: 'Daniel Namir',
+          badge: 'Local Guide · 7 reviews · 1 photo',
+          date: 'a month ago',
+          source: 'Google Maps Review',
+          text: "I've eaten here three times now, and the Majestic Cheeseburger is honestly one of the best burgers I've had. It's juicy, flavorful, and the kind of burger that has you thinking about it on the drive home and looking forward to the next time you can have it.\n\nThe first time I came alone, and after that I brought family and friends because I wanted them to try it too. Everyone's reaction was positive, and it's become one of my favorite burger spots.\n\nOne thing to keep in mind is that the place gets busy with takeaway and delivery orders, so there can be a bit of a wait for food. If you're in a hurry, it might be worth ordering ahead. That said, the quality of the food makes the wait completely worth it.\n\nHighly recommended.",
+        }
+      ]
     },
     social: {
       label: "Stay Connected",
@@ -113,7 +136,7 @@ export const translations = {
       menu: 'ሜኑ',
       branches: 'ቅርንጫፎች',
       reviews: 'አስተያየቶች',
-      contact: 'አድራሻ',
+      contact: 'ያግኙን',
     },
     hero: {
       tagline: "የአዲስ አበባ ምርጥ",
@@ -133,12 +156,12 @@ export const translations = {
     },
     menu: {
       label: "ለንግሥትነት የተዘጋጀ",
-      title: "የንግሥታዊ ሜኑ",
+      title: "ንግሥታዊ ሜኑ",
       specialtyRibbon: "👑 የቤቱ ልዩ ምግብ",
       signatureCreation: "🔥 ልዩ ፈጠራ",
       sidesPill: "🍟 ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የሚቀርብ",
       sidesTag: "🍟 ከመደበኛ ወይም ዋፍል ፍራይስ ጋር የሚቀርብ",
-      tabAll: "ሁሉም",
+      tabAll: "ሁሉም ምግቦች",
       tabSpecialty: "⭐ የቤቱ ልዩ",
       tabBurgers: "🍔 በርገሮች",
       tabSandwiches: "🥪 ሳንድዊቾች",
@@ -163,7 +186,7 @@ export const translations = {
           desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የሚያቃጥል ሶስ፣ ፒክል፣ ፕሮቮሎን ቺዝ ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
         },
         'fried-onion': {
-          name: 'ዘ ፍራይድ ኦኒየን ዲላይት (The Fried Onion)',
+          name: 'ዘ ፍራይድ ኦኒየን ዲላይት (The Fried Onion Delight)',
           desc: 'በጥራት የተቀመመ የበሬ ሥጋ ፓቲ፣ በቅቤ የተጠበሰ ቡን፣ የቤቱ ሶስ፣ ፕሮቮሎን ቺዝ፣ የተጠበሰ የሽንኩርት ቀለበት ከመደበኛ የድንች ጥብስ ወይም ዋፍል ፍራይስ ጋር የቀረበ',
         },
         'crowned-bacon': {
@@ -201,6 +224,29 @@ export const translations = {
       label: "የደንበኞች አስተያየት",
       title: "ከጉግል ካርታ የተወሰዱ አስተያየቶች",
       cta: "📍 ተጨማሪ አስተያየቶችን በጉግል ካርታ ላይ ይመልከቱ",
+      list: [
+        {
+          name: 'አማኑኤል ገዛኸኝ (Amanuel Gezahegn)',
+          badge: 'ሎካል ጋይድ (Local Guide) · 36 አስተያየቶች · 86 ፎቶዎች',
+          date: 'ከ2 ወራት በፊት',
+          source: 'የጉግል ካርታ አስተያየት',
+          text: "ማጀስቲክ ቺዝ በርገር እና ኸር ማጀስቲን ሞክረናል። ማጀስቲክ ቺዝ በርገሩ በጣም ጁሲ (juicy) እና ከኸር ማጀስቲ ይበልጥ የሚጣፍጥ ነው። ጁሲ የሆነ በርገር ከፈለጉ የመጀመሪያውን ይምረጡ፤ ኸር ማጀስቲ ደግሞ በጥሩ ሁኔታ የተዘጋጀ ነው። ሁለቱም በጣም የሚጣፍጡ ናቸው፤ የድንች ጥብሱ ግን በጣም ቀጭን ነው። ዋጋው እዚህ ከተለጠፈው ሜኑ ጋር ተመሳሳይ ነው። መጠኑ ትንሽ አነስ ያለ ነው ግን ያን ያህል አነስተኛ አይደለም።",
+        },
+        {
+          name: 'ኑሃሚን አበራ (Nuhamin Abera)',
+          badge: 'ሎካል ጋይድ (Local Guide) · 20 አስተያየቶች · 252 ፎቶዎች',
+          date: 'ከ5 ወራት በፊት',
+          source: 'የጉግል ካርታ አስተያየት',
+          text: "ከወንድሞቼና እህቶቼ ጋር ጎብኝቼ በጣም ደስ የሚል ጊዜ አሳልፈናል! ምግቡ ጣዕም ያለው፣ በደንብ የተቀመመ፣ ለስላሳ ቡን፣ ቆጣጣ የድንች ጥብስና የሚጣፍጥ ሶስ አለው። ቦታው ትንሽ ጠበብ ይላል፤ ነገር ግን አስተናጋጆቹ ፈጣንና ትኩረት የሚሰጡ ናቸው፣ ምግቡም ለመድረስ ብዙ አይቆይም። የበርገር ፍላጎቴን ለማርካት ከምወዳቸው ቦታዎች አንዱ አድርጌ ልሾመው እችላለሁ👸",
+        },
+        {
+          name: 'ዳንኤል ናሚር (Daniel Namir)',
+          badge: 'ሎካል ጋይድ (Local Guide) · 7 አስተያየቶች · 1 ፎቶ',
+          date: 'ከአንድ ወር በፊት',
+          source: 'የጉግል ካርታ አስተያየት',
+          text: "እዚህ ሶስት ጊዜ በልቻለሁ፤ ማጀስቲክ ቺዝበርገሩ በቅንነት ከተመገብኳቸው ምርጥ በርገሮች አንዱ ነው። ጁሲ፣ ጣዕም ያለው እና ወደ ቤት እየተመለሱ የሚያስቡትና ሌላ ጊዜ ለመብላት የሚጓጉለት ዓይነት በርገር ነው።\n\nየመጀመሪያውን ጊዜ ብቻዬን ነው የመጣሁት፤ ከዚያ በኋላ ቤተሰቦቼንና ጓደኞቼን ይዤ መጣሁ ምክንያቱም እንዲሞክሩት ስለምፈልግ። የሁሉም አስተያየት አዎንታዊ ነበር፣ እናም ከምወዳቸው የበርገር ቦታዎች አንዱ ሆኗል።\n\nልብ ሊሉት የሚገባው ነገር ቦታው በቴክ-አዌይ እና በዴሊቨሪ ትእዛዞች ስለሚበዛ ትንሽ የትዕዛዝ ጥበቃ ሊኖር ይችላል። ቸኩለው ከሆነ አስቀድመው ማዘዙ ይመከራል። ሆኖም የምግቡ ጥራት ጥበቃውን ሙሉ በሙሉ የሚያስቆጭ ያደርገዋል።\n\nበጣም የሚመከር።",
+        }
+      ]
     },
     social: {
       label: "ይከተሉን",
@@ -211,7 +257,7 @@ export const translations = {
     footer: {
       sub: "የአዲስ አበባ የንግሥት ጣዕም በኩራት የተዘጋጀ።",
       quickLinks: "ፈጣን ሊንኮች",
-      contact: "አድራሻ",
+      contact: "ያግኙን",
       rights: "© 2026 ኪን በርገር አዲስ። መብቱ በህግ የተጠበቀ ነው።",
     }
   }

@@ -1,40 +1,11 @@
 import useInView from '../hooks/useInView'
 import { useLanguage } from '../context/LanguageContext'
 
-const reviews = [
-  {
-    name: 'Amanuel Gezahegn',
-    badge: 'Local Guide · 36 reviews · 86 photos',
-    date: '2 months ago',
-    stars: 5,
-    text: "We tried; Majestic Cheese Burger and Her Majesty (left to right). The Majestic Cheese Burger is very juicy and more delicious than Her Majesty. If you're up to juicy one go for the first one but if you like well maintained one go for the second one. They both teast wonderful but the french fries is a joke, very thin. Price is the same as the menu posted here. Quantity wise little bit small but not that much small though.",
-    avatar: 'A',
-    source: 'Google Maps Review',
-  },
-  {
-    name: 'Nuhamin Abera',
-    badge: 'Local Guide · 20 reviews · 252 photos',
-    date: '5 months ago',
-    stars: 5,
-    text: "I visited with my siblings and had such an amazing experience! The food was full of flavor, perfectly seasoned, with a soft bun, crispy chips, and delicious sauces. The space is a bit small, but the waiters are attentive and the food doesn’t take long to arrive. I might even crown this as one of my favorite burger spots to cool down a craving👸",
-    avatar: 'N',
-    source: 'Google Maps Review',
-    featured: true,
-  },
-  {
-    name: 'Daniel Namir',
-    badge: 'Local Guide · 7 reviews · 1 photo',
-    date: 'a month ago',
-    stars: 5,
-    text: "I've eaten here three times now, and the Majestic Cheeseburger is honestly one of the best burgers I've had. It's juicy, flavorful, and the kind of burger that has you thinking about it on the drive home and looking forward to the next time you can have it.\n\nThe first time I came alone, and after that I brought family and friends because I wanted them to try it too. Everyone's reaction was positive, and it's become one of my favorite burger spots.\n\nOne thing to keep in mind is that the place gets busy with takeaway and delivery orders, so there can be a bit of a wait for food. If you're in a hurry, it might be worth ordering ahead. That said, the quality of the food makes the wait completely worth it.\n\nHighly recommended.",
-    avatar: 'D',
-    source: 'Google Maps Review',
-  },
-]
-
 export default function Reviews() {
   const [ref, inView] = useInView()
   const { t } = useLanguage()
+
+  const reviewsList = t('reviews.list') || []
 
   return (
     <section className="reviews" id="reviews">
@@ -43,8 +14,8 @@ export default function Reviews() {
         <h2 className="reviews-title">{t('reviews.title')}</h2>
 
         <div className={`reviews-grid ${inView ? 'visible' : ''}`} ref={ref}>
-          {reviews.map((review, i) => (
-            <div key={i} className={`review-card ${review.featured ? 'review-card-featured' : ''}`}>
+          {Array.isArray(reviewsList) && reviewsList.map((review, i) => (
+            <div key={i} className={`review-card ${i === 1 ? 'review-card-featured' : ''}`}>
               <div className="review-card-top">
                 <div className="review-badge-google">
                   <svg className="google-icon" viewBox="0 0 24 24" width="16" height="16">
@@ -59,7 +30,7 @@ export default function Reviews() {
               </div>
 
               <div className="review-stars">
-                {'★'.repeat(review.stars)}
+                ★★★★★
               </div>
 
               <div className="review-body">
@@ -69,7 +40,9 @@ export default function Reviews() {
               </div>
 
               <div className="reviewer">
-                <div className="reviewer-avatar">{review.avatar}</div>
+                <div className="reviewer-avatar">
+                  {review.name ? review.name.charAt(0) : 'G'}
+                </div>
                 <div className="reviewer-meta">
                   <strong>{review.name}</strong>
                   <span className="reviewer-guide">{review.badge}</span>
