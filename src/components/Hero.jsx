@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="hero" id="hero">
       <img
-        src="/asset/aadb7ff94d3e3b00cf6292359f395181.webp"
+        src="/asset/eff815aaaccaf0d11543703f1ca0a008.webp"
         alt="Queen Burger"
         className="hero-bg"
       />
