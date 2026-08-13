@@ -25,7 +25,10 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
-        <a href="#hero" className="nav-logo">👑 Queen Burger</a>
+        <a href="#hero" className="nav-logo">
+          <img src="/asset/logo.jpg" alt="Queen Burger Logo" className="nav-logo-img" />
+          <span className="nav-logo-text">Queen Burger</span>
+        </a>
 
         <ul className={`nav-links ${open ? 'open' : ''}`}>
           {links.map(({ href, label }) => (
