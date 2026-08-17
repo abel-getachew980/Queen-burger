@@ -1,11 +1,21 @@
+import { useState } from 'react'
+import { Star, MapPin, ExternalLink, Filter } from 'lucide-react'
 import useInView from '../hooks/useInView'
 import { useLanguage } from '../context/LanguageContext'
 
 export default function Reviews() {
   const [ref, inView] = useInView()
   const { t } = useLanguage()
+  const [filter, setFilter] = useState('all')
 
-  const reviewsList = t('reviews.list') || []
+  const rawReviewsList = t('reviews.list') || []
+
+  const reviewsList = Array.isArray(rawReviewsList)
+    ? rawReviewsList.filter(review => {
+        if (filter === 'guides') return review.badge?.includes('Local Guide') || review.badge?.includes('ሎካል ጋይድ')
+        return true
+      })
+    : []
 
   return (
     <section className="reviews" id="reviews">
@@ -13,8 +23,24 @@ export default function Reviews() {
         <span className="reviews-label">{t('reviews.label')}</span>
         <h2 className="reviews-title">{t('reviews.title')}</h2>
 
+        {/* Review Filter Pills */}
+        <div className="reviews-filter-bar">
+          <button
+            className={`review-filter-btn ${filter === 'all' ? 'active' : ''}`}
+            onClick={() => setFilter('all')}
+          >
+            {t('reviews.filterAll')}
+          </button>
+          <button
+            className={`review-filter-btn ${filter === 'guides' ? 'active' : ''}`}
+            onClick={() => setFilter('guides')}
+          >
+            <Filter size={13} /> {t('reviews.filterGuides')}
+          </button>
+        </div>
+
         <div className={`reviews-grid ${inView ? 'visible' : ''}`} ref={ref}>
-          {Array.isArray(reviewsList) && reviewsList.map((review, i) => (
+          {reviewsList.map((review, i) => (
             <div key={i} className={`review-card ${i === 1 ? 'review-card-featured' : ''}`}>
               <div className="review-card-top">
                 <div className="review-badge-google">
@@ -29,8 +55,10 @@ export default function Reviews() {
                 <span className="review-date">{review.date}</span>
               </div>
 
-              <div className="review-stars">
-                ★★★★★
+              <div className="review-stars-container">
+                {[...Array(5)].map((_, sIdx) => (
+                  <Star key={sIdx} size={16} className="star-icon-filled" />
+                ))}
               </div>
 
               <div className="review-body">
@@ -59,7 +87,9 @@ export default function Reviews() {
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            {t('reviews.cta')}
+            <MapPin size={16} />
+            <span>{t('reviews.cta')}</span>
+            <ExternalLink size={14} />
           </a>
         </div>
       </div>

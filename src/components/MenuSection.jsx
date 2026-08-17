@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { Crown, Flame, Utensils } from 'lucide-react'
 import useInView from '../hooks/useInView'
 import { useLanguage } from '../context/LanguageContext'
+import BurgerModal from './BurgerModal'
 
 const rawMenuItems = [
   {
@@ -8,7 +10,6 @@ const rawMenuItems = [
     category: 'specialty',
     price: '2,000 ETB',
     isSpecialty: true,
-    badge: '🔥 Specialty',
     image: '/asset/burger.jpg',
   },
   {
@@ -30,7 +31,6 @@ const rawMenuItems = [
     category: 'burgers',
     price: '790 ETB',
     isSpecialty: false,
-    badge: '🌶️ Spicy',
     image: '/asset/food3.jpg',
   },
   {
@@ -45,7 +45,6 @@ const rawMenuItems = [
     category: 'burgers',
     price: '840 ETB',
     isSpecialty: false,
-    badge: '🥓 Bacon Choice',
     image: '/asset/Take-away.jpg',
   },
   {
@@ -60,7 +59,6 @@ const rawMenuItems = [
     category: 'burgers',
     price: '880 ETB',
     isSpecialty: false,
-    badge: '👑 Royal Pick',
     image: '/asset/Food2.jpg',
   },
   {
@@ -68,7 +66,6 @@ const rawMenuItems = [
     category: 'burgers',
     price: '1,350 ETB',
     isSpecialty: false,
-    badge: '🍔 Double Patty',
     image: '/asset/food3.jpg',
   },
   {
@@ -76,15 +73,56 @@ const rawMenuItems = [
     category: 'sandwiches',
     price: '900 ETB',
     isSpecialty: false,
-    badge: '🥪 Specialty Sandwich',
     image: '/asset/Food.jpg',
   }
 ]
 
+// Category config with decoration images
+const categoryConfig = [
+  {
+    key: 'specialty',
+    labelKey: 'menu.catSpecialty',
+    icon: Crown,
+    decorImage: '/asset/menu-burger-decor.jpg',
+    decorPosition: 'left',
+    decorRotate: -4,
+  },
+  {
+    key: 'burgers',
+    labelKey: 'menu.catBurgers',
+    icon: Flame,
+    decorImage: '/asset/Food2.jpg',
+    decorPosition: 'right',
+    decorRotate: 3,
+  },
+  {
+    key: 'sandwiches',
+    labelKey: 'menu.catSandwiches',
+    icon: Utensils,
+    decorImage: '/asset/menu-sandwich-decor.jpg',
+    decorPosition: 'left',
+    decorRotate: -3,
+  },
+]
+
+function WavyDivider() {
+  return (
+    <div className="classic-menu-divider" aria-hidden="true">
+      <svg viewBox="0 0 600 20" preserveAspectRatio="none">
+        <path
+          d="M0 10 Q 15 0, 30 10 Q 45 20, 60 10 Q 75 0, 90 10 Q 105 20, 120 10 Q 135 0, 150 10 Q 165 20, 180 10 Q 195 0, 210 10 Q 225 20, 240 10 Q 255 0, 270 10 Q 285 20, 300 10 Q 315 0, 330 10 Q 345 20, 360 10 Q 375 0, 390 10 Q 405 20, 420 10 Q 435 0, 450 10 Q 465 20, 480 10 Q 495 0, 510 10 Q 525 20, 540 10 Q 555 0, 570 10 Q 585 20, 600 10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+      </svg>
+    </div>
+  )
+}
+
 export default function MenuSection() {
   const [ref, inView] = useInView()
-  const [activeTab, setActiveTab] = useState('all')
-  const [searchQuery, setSearchQuery] = useState('')
+  const [selectedItem, setSelectedItem] = useState(null)
   const { t } = useLanguage()
 
   const menuItems = rawMenuItems.map(item => ({
@@ -93,129 +131,97 @@ export default function MenuSection() {
     description: t(`menu.items.${item.id}.desc`),
   }))
 
-  const filteredItems = menuItems.filter(item => {
-    const matchesTab =
-      activeTab === 'all' ||
-      (activeTab === 'specialty' && item.isSpecialty) ||
-      (activeTab === 'burgers' && item.category === 'burgers') ||
-      (activeTab === 'sandwiches' && item.category === 'sandwiches')
+  // Group items by category
+  const groupedItems = categoryConfig.map(cat => ({
+    ...cat,
+    label: t(cat.labelKey),
+    items: menuItems.filter(item => item.category === cat.key),
+  })).filter(group => group.items.length > 0)
 
-    const matchesSearch =
-      item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchQuery.toLowerCase())
-
-    return matchesTab && matchesSearch
-  })
-
-  const specialtyItem = menuItems.find(i => i.isSpecialty)
+  const navLinks = [
+    { href: '#hero', label: t('nav.about').replace('About', 'Home') || 'Home' },
+    { href: '#branches', label: t('nav.branches') },
+    { href: '#about', label: t('nav.about') },
+    { href: '#reviews', label: t('nav.reviews') },
+    { href: '#contact', label: t('nav.contact') },
+  ]
 
   return (
-    <section className="menu-section" id="menu">
+    <section className="menu-section classic-menu" id="menu" ref={ref}>
       <div className="container">
-        <span className="menu-label">{t('menu.label')}</span>
-        <h2 className="menu-title">{t('menu.title')}</h2>
+        <div className="classic-menu-layout">
+        {/* Left Sidebar */}
+        <aside className="classic-menu-sidebar">
+          <nav className="classic-menu-nav" aria-label="Menu navigation">
+            {navLinks.map(link => (
+              <a key={link.href} href={link.href} className="classic-menu-nav-link">
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-        {/* Specialty Feature Banner */}
-        {specialtyItem && (
-          <div className="specialty-hero-card">
-            <div className="specialty-badge-ribbon">
-              <span>{t('menu.specialtyRibbon')}</span>
-            </div>
-            <div className="specialty-hero-content">
-              <div className="specialty-info">
-                <span className="specialty-fire">{t('menu.signatureCreation')}</span>
-                <h3>{specialtyItem.name}</h3>
-                <p className="specialty-desc">{specialtyItem.description}</p>
-                <div className="specialty-meta">
-                  <span className="specialty-price">{specialtyItem.price}</span>
-                  <span className="specialty-sides-pill">{t('menu.sidesPill')}</span>
+          <div className="classic-menu-sidebar-photo sidebar-photo-1">
+            <img src="/asset/menu-drink-decor.jpg" alt="Refreshing drink" />
+          </div>
+        </aside>
+
+        {/* Right Content: Menu Listing */}
+        <div className={`classic-menu-content ${inView ? 'visible' : ''}`}>
+          <h2 className="classic-menu-main-title">{t('menu.title')}</h2>
+
+          {groupedItems.map((group, idx) => {
+            const Icon = group.icon
+            return (
+              <div key={group.key} className="classic-menu-category">
+                {/* Category Header with photo */}
+                <div className={`classic-category-header decor-${group.decorPosition}`}>
+                  <div className="classic-category-photo-wrapper" style={{ '--rotate': `${group.decorRotate}deg` }}>
+                    <img src={group.decorImage} alt={group.label} />
+                  </div>
+                  <div className="classic-category-title-area">
+                    <h3 className="classic-category-title">
+                      <Icon size={22} className="classic-category-icon" />
+                      {group.label}
+                    </h3>
+                  </div>
                 </div>
-              </div>
-              <div className="specialty-image-wrapper">
-                <img src={specialtyItem.image} alt={specialtyItem.name} />
-                <div className="lava-glow"></div>
-              </div>
-            </div>
-          </div>
-        )}
 
-        {/* Controls: Search and Filter Tabs */}
-        <div className="menu-controls">
-          <div className="menu-tabs">
-            <button
-              className={`menu-tab ${activeTab === 'all' ? 'active' : ''}`}
-              onClick={() => setActiveTab('all')}
-            >
-              {t('menu.tabAll')} ({menuItems.length})
-            </button>
-            <button
-              className={`menu-tab ${activeTab === 'specialty' ? 'active' : ''}`}
-              onClick={() => setActiveTab('specialty')}
-            >
-              {t('menu.tabSpecialty')}
-            </button>
-            <button
-              className={`menu-tab ${activeTab === 'burgers' ? 'active' : ''}`}
-              onClick={() => setActiveTab('burgers')}
-            >
-              {t('menu.tabBurgers')}
-            </button>
-            <button
-              className={`menu-tab ${activeTab === 'sandwiches' ? 'active' : ''}`}
-              onClick={() => setActiveTab('sandwiches')}
-            >
-              {t('menu.tabSandwiches')}
-            </button>
-          </div>
+                {/* Menu Items */}
+                <div className="classic-menu-items">
+                  {group.items.map(item => (
+                    <button
+                      key={item.id}
+                      className="classic-menu-item-row"
+                      onClick={() => setSelectedItem(item)}
+                      type="button"
+                    >
+                      <span className="classic-item-name">{item.name}</span>
+                      <span className="classic-item-dots" aria-hidden="true"></span>
+                      <span className="classic-item-price">{item.price}</span>
+                    </button>
+                  ))}
+                </div>
 
-          <div className="menu-search">
-            <svg className="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input
-              type="text"
-              placeholder={t('menu.searchPlaceholder')}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            {searchQuery && (
-              <button className="clear-search" onClick={() => setSearchQuery('')}>✕</button>
-            )}
-          </div>
+                {/* Wavy Divider (except after last) */}
+                {idx < groupedItems.length - 1 && <WavyDivider />}
+              </div>
+            )
+          })}
+
+          <p className="classic-menu-footer-note">
+            {t('menu.sidesTag')}
+          </p>
         </div>
-
-        {/* Menu Cards Grid */}
-        <div className={`menu-grid ${inView ? 'visible' : ''}`} ref={ref}>
-          {filteredItems.map(item => (
-            <div key={item.id} className={`menu-card ${item.isSpecialty ? 'specialty-card' : ''}`}>
-              <div className="menu-card-image">
-                <img src={item.image} alt={item.name} loading="lazy" />
-                {item.badge && <span className="item-badge">{item.badge}</span>}
-              </div>
-              <div className="menu-card-body">
-                <div className="menu-card-header">
-                  <h3 className="menu-item-name">{item.name}</h3>
-                  <span className="menu-item-price">{item.price}</span>
-                </div>
-                <p className="menu-item-desc">{item.description}</p>
-                <div className="menu-card-footer">
-                  <span className="sides-tag">
-                    {t('menu.sidesTag')}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {filteredItems.length === 0 && (
-          <div className="no-menu-results">
-            <p>{t('menu.noResults').replace('{query}', searchQuery)}</p>
-            <button onClick={() => { setSearchQuery(''); setActiveTab('all') }}>{t('menu.resetFilters')}</button>
-          </div>
-        )}
       </div>
+    </div>
+
+      {/* Interactive Customizer Modal */}
+      {selectedItem && (
+        <BurgerModal
+          item={selectedItem}
+          onClose={() => setSelectedItem(null)}
+        />
+      )}
     </section>
   )
 }

@@ -1,3 +1,4 @@
+import { Crown, MapPin, Phone } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 export default function Hero() {
@@ -6,7 +7,7 @@ export default function Hero() {
   return (
     <section className="hero" id="hero">
       <img
-        src="/asset/eff815aaaccaf0d11543703f1ca0a008.webp"
+        src="/asset/hero.webp"
         alt="Queen Burger"
         className="hero-bg"
       />
@@ -16,7 +17,7 @@ export default function Hero() {
       <div className="hero-content">
         <p className="hero-tagline">{t('hero.tagline')}</p>
         <h1>
-          {t('hero.title')}
+          {t('hero.title')} <Crown className="hero-crown-icon" size={42} />
         </h1>
         <p className="hero-sub">
           {t('hero.sub')}
@@ -26,9 +27,11 @@ export default function Hero() {
           <a href="#branches" className="btn-outline">{t('hero.btnBranches')}</a>
         </div>
         <div className="hero-badges">
-          <span>{t('hero.badgeFriendship')}</span>
-          <span>{t('hero.badgeMekanisa')}</span>
-          <span>{t('hero.phone')}</span>
+          <span><MapPin size={15} /> {t('hero.badgeFriendship')}</span>
+          <span><MapPin size={15} /> {t('hero.badgeMekanisa')}</span>
+          <a href="tel:+251955909094" className="hero-phone-badge">
+            <Phone size={15} /> {t('hero.phone')}
+          </a>
         </div>
       </div>
     </section>
