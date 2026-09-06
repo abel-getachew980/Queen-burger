@@ -167,7 +167,7 @@ export const translations = {
       callMekanisa: "Call Mekanisa Branch",
     },
     mobileBar: {
-      callUs: "Call +251 955 909 094",
+      callUs: "Call to Order",
       viewMenu: "View Menu",
     }
   },
@@ -339,7 +339,7 @@ export const translations = {
       callMekanisa: "ለመካኒሳ ቅርንጫፍ ይደውሉ",
     },
     mobileBar: {
-      callUs: "ይደውሉ +251 955 909 094",
+      callUs: "አሁን ይደውሉ",
       viewMenu: "ሜኑ ይመልከቱ",
     }
   }
