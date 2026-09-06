@@ -480,106 +480,18 @@
 }
 
 .classic-menu-layout {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  min-height: 700px;
+  max-width: 920px;
+  margin: 0 auto;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid rgba(212, 160, 23, 0.25);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
 }
 
-/* --- Left Sidebar --- */
-.classic-menu-sidebar {
-  background:
-    radial-gradient(circle at top left, rgba(212, 160, 23, 0.15) 0%, transparent 60%),
-    linear-gradient(180deg, #090e33 0%, #040720 100%);
-  padding: 48px 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  position: relative;
-  overflow: hidden;
-  border-right: 1px solid rgba(212, 160, 23, 0.18);
-}
-
-.classic-menu-sidebar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 30% 20%, rgba(212, 160, 23, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 80%, rgba(10, 15, 54, 0.4) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.classic-menu-nav {
-  position: relative;
-  z-index: 1;
-  background: rgba(4, 7, 32, 0.75);
-  border: 1px solid rgba(212, 160, 23, 0.25);
-  border-radius: 16px;
-  padding: 28px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  backdrop-filter: blur(12px);
-  width: 100%;
-}
-
-.classic-menu-nav-link {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  text-align: center;
-  width: 100%;
-  letter-spacing: 0.01em;
-}
-
-.classic-menu-nav-link:hover {
-  color: var(--gold);
-  background: rgba(212, 160, 23, 0.12);
-  transform: translateX(4px);
-}
-
-/* Sidebar decorative photo */
-.classic-menu-sidebar-photo {
-  position: relative;
-  z-index: 1;
-  width: 220px;
-  border: 3px solid rgba(212, 160, 23, 0.35);
-  border-radius: 12px;
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.5),
-    0 0 20px rgba(212, 160, 23, 0.15);
-  overflow: hidden;
-  transform: rotate(-3deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-}
-
-.classic-menu-sidebar-photo:hover {
-  transform: rotate(0deg) scale(1.03);
-  border-color: var(--gold);
-  box-shadow: 0 12px 40px rgba(212, 160, 23, 0.3);
-}
-
-.classic-menu-sidebar-photo img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  display: block;
-}
-
-/* --- Right Content Panel --- */
+/* --- Menu Content Panel --- */
 .classic-menu-content {
   background: linear-gradient(180deg, #0a0f36 0%, #040720 100%);
-  padding: 52px 56px 48px 56px;
+  padding: clamp(36px, 5vw, 56px);
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;

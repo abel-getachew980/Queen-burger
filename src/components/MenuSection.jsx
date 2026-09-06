@@ -138,36 +138,13 @@ export default function MenuSection() {
     items: menuItems.filter(item => item.category === cat.key),
   })).filter(group => group.items.length > 0)
 
-  const navLinks = [
-    { href: '#hero', label: t('nav.about').replace('About', 'Home') || 'Home' },
-    { href: '#branches', label: t('nav.branches') },
-    { href: '#about', label: t('nav.about') },
-    { href: '#reviews', label: t('nav.reviews') },
-    { href: '#contact', label: t('nav.contact') },
-  ]
-
   return (
     <section className="menu-section classic-menu" id="menu" ref={ref}>
       <div className="container">
         <div className="classic-menu-layout">
-        {/* Left Sidebar */}
-        <aside className="classic-menu-sidebar">
-          <nav className="classic-menu-nav" aria-label="Menu navigation">
-            {navLinks.map(link => (
-              <a key={link.href} href={link.href} className="classic-menu-nav-link">
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="classic-menu-sidebar-photo sidebar-photo-1">
-            <img src="/asset/menu-drink-decor.jpg" alt="Refreshing drink" />
-          </div>
-        </aside>
-
-        {/* Right Content: Menu Listing */}
-        <div className={`classic-menu-content ${inView ? 'visible' : ''}`}>
-          <h2 className="classic-menu-main-title">{t('menu.title')}</h2>
+          {/* Menu Listing Content */}
+          <div className={`classic-menu-content ${inView ? 'visible' : ''}`}>
+            <h2 className="classic-menu-main-title">{t('menu.title')}</h2>
 
           {groupedItems.map((group, idx) => {
             const Icon = group.icon
