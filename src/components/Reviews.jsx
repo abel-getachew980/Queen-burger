@@ -8,14 +8,17 @@ export default function Reviews() {
   const { t } = useLanguage()
   const [filter, setFilter] = useState('all')
 
-  const rawReviewsList = t('reviews.list') || []
+  const rawReviewsList = Array.isArray(t('reviews.list')) ? t('reviews.list') : []
 
-  const reviewsList = Array.isArray(rawReviewsList)
-    ? rawReviewsList.filter(review => {
-        if (filter === 'guides') return review.badge?.includes('Local Guide') || review.badge?.includes('ሎካል ጋይድ')
-        return true
-      })
-    : []
+  const allCount = rawReviewsList.length
+  const guidesCount = rawReviewsList.filter(r => r.isGuide || r.badge?.includes('Local Guide') || r.badge?.includes('ሎካል ጋይድ')).length
+
+  const reviewsList = rawReviewsList.filter(review => {
+    if (filter === 'guides') {
+      return Boolean(review.isGuide || review.badge?.includes('Local Guide') || review.badge?.includes('ሎካል ጋይድ'))
+    }
+    return true
+  })
 
   return (
     <section className="reviews" id="reviews">
@@ -26,16 +29,21 @@ export default function Reviews() {
         {/* Review Filter Pills */}
         <div className="reviews-filter-bar">
           <button
+            type="button"
             className={`review-filter-btn ${filter === 'all' ? 'active' : ''}`}
             onClick={() => setFilter('all')}
           >
-            {t('reviews.filterAll')}
+            <span>{t('reviews.filterAll')}</span>
+            <span className="filter-count-badge">{allCount}</span>
           </button>
           <button
+            type="button"
             className={`review-filter-btn ${filter === 'guides' ? 'active' : ''}`}
             onClick={() => setFilter('guides')}
           >
-            <Filter size={13} /> {t('reviews.filterGuides')}
+            <Filter size={13} />
+            <span>{t('reviews.filterGuides')}</span>
+            <span className="filter-count-badge">{guidesCount}</span>
           </button>
         </div>
 
